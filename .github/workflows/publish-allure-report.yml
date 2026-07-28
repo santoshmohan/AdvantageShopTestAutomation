@@ -1,0 +1,149 @@
+name: Publish Allure Report to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["Daily Test Execution with Allure Report"]
+    types: [completed]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
+    
+    permissions:
+      contents: write
+      pages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Download artifact
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.payload.workflow_run.id,
+            });
+            
+            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
+              return artifact.name.startsWith('allure-report-Production')
+            })[0];
+            
+            if (!matchArtifact) {
+              console.log('No Allure report artifact found');
+              return;
+            }
+            
+            let download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: matchArtifact.id,
+              archive_format: 'zip',
+            });
+            
+            let fs = require('fs');
+            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/allure-report.zip`, Buffer.from(download.data));
+
+      - name: Unzip report
+        run: |
+          if [ -f "allure-report.zip" ]; then
+            unzip -o allure-report.zip
+            rm allure-report.zip
+            echo "Report unzipped"
+          fi
+
+      - name: Create index page
+        run: |
+          cat > index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Test Reports</title>
+            <style>
+              body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+                background: #f6f8fa;
+              }
+              .container {
+                background: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+              }
+              h1 { color: #0366d6; margin-bottom: 30px; }
+              .report-link {
+                display: inline-block;
+                padding: 12px 24px;
+                background: #0366d6;
+                color: white;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+                margin: 10px 0;
+                transition: background 0.3s;
+              }
+              .report-link:hover {
+                background: #0256c7;
+              }
+              .info {
+                background: #f6f8fa;
+                padding: 15px;
+                border-radius: 6px;
+                margin-top: 20px;
+                font-size: 14px;
+                color: #586069;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <h1>📊 Allure Test Reports</h1>
+              <p>Latest test execution reports:</p>
+              
+              <div>
+                <a href="./allure-report-Production/index.html" class="report-link">
+                  📈 View Latest Allure Report
+                </a>
+              </div>
+              
+              <div class="info">
+                <p><strong>Repository:</strong> AdvantageShopTestAutomation</p>
+                <p><strong>Last Updated:</strong> <span id="lastUpdated">Loading...</span></p>
+                <p><strong>Environment:</strong> Production (Headless Mode)</p>
+              </div>
+            </div>
+            
+            <script>
+              document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+            </script>
+          </body>
+          </html>
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Update Allure reports - $(date)" --allow-empty
+          git push origin gh-pages
+
+      - name: Comment on workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.actions.createWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'daily-tests-with-allure.yml',
+              ref: 'main'
+            })
