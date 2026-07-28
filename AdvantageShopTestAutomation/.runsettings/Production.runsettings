@@ -10,7 +10,7 @@
   <TestRunParameters>
     <Parameter name="environment" value="Production" />
     <Parameter name="browser" value="firefox" />
-    <Parameter name="headless" value="false" />
+    <Parameter name="headless" value="true" />
     <Parameter name="timeout" value="25" />
   </TestRunParameters>
 
