@@ -52,7 +52,7 @@ jobs:
       
       - name: Upload Allure Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: allure-report-${{ matrix.environment }}-${{ github.run_number }}
           path: AdvantageShopTestAutomation/allure-report-${{ matrix.environment }}/
@@ -60,7 +60,7 @@ jobs:
       
       - name: Upload Test Results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results-${{ matrix.environment }}-${{ github.run_number }}
           path: AdvantageShopTestAutomation/TestResults/
@@ -72,4 +72,3 @@ jobs:
           echo "✅ Tests completed for ${{ matrix.environment }}!"
           echo "📊 Allure report generated"
           echo "📝 Check artifacts for detailed reports"
-          
