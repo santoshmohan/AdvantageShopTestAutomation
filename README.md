@@ -61,6 +61,12 @@ You can also use the production run settings:
 DOTNET_CLI_HOME="$TMPDIR" dotnet test --settings .runsettings/Production.runsettings --logger "console;verbosity=detailed"
 ```
 
+## 📊 Sample Allure Report
+
+View a [sample Allure report](./sample-reports/allure-report/index.html) generated from test execution.
+
+> **Note**: This sample report demonstrates the Allure reporting capabilities including test statistics, 
+> timeline, categories, and detailed test results with screenshots and logs.
 
 ## Notes
 - Browser selection and timeout values can be controlled through the run settings files.
