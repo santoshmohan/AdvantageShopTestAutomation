@@ -1,0 +1,74 @@
+name: Daily Test Execution with Allure Report
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Runs daily at 9 AM UTC
+  workflow_dispatch:      # Allows manual trigger
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'  # Adjust to your .NET version
+      
+      - name: Restore dependencies
+        run: dotnet restore
+      
+      - name: Build project
+        run: dotnet build --no-restore --configuration Release
+      
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --logger "trx" --results-directory "TestResults"
+        continue-on-error: true  # Continue even if tests fail
+      
+      - name: Install Allure Commandline
+        if: always()
+        run: npm install -g allure-commandline
+      
+      - name: Generate Allure Report
+        if: always()
+        run: allure generate allure-results --clean -o allure-report
+      
+      - name: Upload Allure Report as Artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report-${{ github.run_number }}
+          path: allure-report/
+          retention-days: 30
+      
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results-${{ github.run_number }}
+          path: TestResults/
+          retention-days: 30
+      
+      - name: Comment on PR with Report Link
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '📊 **Test Report Generated**\n\nDownload the Allure report from the [Actions artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})'
+            })
+
+      - name: Test Summary
+        if: always()
+        run: |
+          echo "✅ Tests completed!"
+          echo "📊 Allure report generated"
+          echo "📝 Check artifacts for detailed reports"
