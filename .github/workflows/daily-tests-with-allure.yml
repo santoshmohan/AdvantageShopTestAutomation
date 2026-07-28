@@ -36,6 +36,20 @@ jobs:
         run: dotnet test --no-build --configuration Release --settings .runsettings/${{ matrix.environment }}.runsettings --logger "console;verbosity=detailed" --logger "trx;LogFileName=TestResults-${{ matrix.environment }}.trx" --results-directory "TestResults"
         continue-on-error: true
       
+      - name: Check allure-results directory
+        if: always()
+        working-directory: ./AdvantageShopTestAutomation
+        run: |
+          echo "Checking for allure-results directory..."
+          if [ -d "allure-results" ]; then
+            echo "✓ allure-results directory found"
+            ls -la allure-results/
+          else
+            echo "✗ allure-results directory NOT found"
+            echo "Current directory contents:"
+            ls -la
+          fi
+      
       - name: Install Allure Commandline
         if: always()
         run: npm install -g allure-commandline
@@ -45,9 +59,13 @@ jobs:
         working-directory: ./AdvantageShopTestAutomation
         run: |
           if [ -d "allure-results" ]; then
+            echo "Generating Allure report from allure-results..."
             allure generate allure-results --clean -o allure-report-${{ matrix.environment }}
+            echo "Report generated successfully"
           else
-            echo "No allure-results directory found for ${{ matrix.environment }}"
+            echo "ERROR: No allure-results directory found. Creating empty report..."
+            mkdir -p allure-report-${{ matrix.environment }}
+            echo "Empty report directory created"
           fi
       
       - name: Upload Allure Report
@@ -72,5 +90,7 @@ jobs:
           echo "✅ Tests completed for ${{ matrix.environment }}!"
           echo "🌐 Environment: ${{ matrix.environment }}"
           echo "🌍 Browser: Firefox"
+          echo "🎯 Headless Mode: Enabled ✓"
+          echo "⏱️ Timeout: 25 seconds"
           echo "📊 Allure report generated"
           echo "📝 Check artifacts for detailed reports"

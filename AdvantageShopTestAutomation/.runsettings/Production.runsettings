@@ -19,6 +19,7 @@
   </NLog>
 
   <Allure>
-    <OutputPath>allure-results</OutputPath>
+    <OutputPath>./allure-results</OutputPath>
+    <ShouldDeletePreviousResults>true</ShouldDeletePreviousResults>
   </Allure>
 </RunSettings>
