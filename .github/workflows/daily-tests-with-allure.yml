@@ -16,10 +16,16 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
       
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
       
@@ -92,26 +98,31 @@ jobs:
           # Check Release bin first
           if [ -d "bin/Release/net10.0/allure-results" ]; then
             echo "✓ Found in bin/Release/net10.0"
-            cp -r bin/Release/net10.0/allure-results ./allure-results-release
-            ls -laR ./allure-results-release
+            cp -r bin/Release/net10.0/allure-results ./allure-results
           fi
           
-          # Check Debug bin
-          if [ -d "bin/Debug/net10.0/allure-results" ]; then
+          # Check Debug bin if not found in Release
+          if [ ! -d "allure-results" ] && [ -d "bin/Debug/net10.0/allure-results" ]; then
             echo "✓ Found in bin/Debug/net10.0"
-            cp -r bin/Debug/net10.0/allure-results ./allure-results-debug
-            ls -laR ./allure-results-debug
+            cp -r bin/Debug/net10.0/allure-results ./allure-results
           fi
           
           # Use find as fallback
-          FOUND_DIR=$(find . -type d -name "allure-results" 2>/dev/null | grep -v node_modules | head -1)
-          if [ -n "$FOUND_DIR" ]; then
-            echo "✓ Found at: $FOUND_DIR"
-            cp -r "$FOUND_DIR" ./allure-results
-            echo "✓ Copied to ./allure-results"
-            ls -laR ./allure-results
-          else
-            echo "✗ No allure-results directory found anywhere"
+          if [ ! -d "allure-results" ]; then
+            FOUND_DIR=$(find . -type d -name "allure-results" 2>/dev/null | grep -v node_modules | head -1)
+            if [ -n "$FOUND_DIR" ]; then
+              echo "✓ Found at: $FOUND_DIR"
+              cp -r "$FOUND_DIR" ./allure-results
+              echo "✓ Copied to ./allure-results"
+            else
+              echo "✗ No allure-results directory found anywhere"
+            fi
+          fi
+          
+          # Verify
+          if [ -d "allure-results" ]; then
+            FILE_COUNT=$(find allure-results -type f | wc -l)
+            echo "✓ allure-results contains $FILE_COUNT files"
           fi
       
       - name: Install Allure Commandline
@@ -122,37 +133,32 @@ jobs:
         if: always()
         working-directory: ./AdvantageShopTestAutomation
         run: |
-          echo "=== Checking for allure-results ==="
+          echo "=== Generating Allure Report ==="
           
           if [ -d "allure-results" ]; then
-            echo "✓ allure-results exists"
             RESULT_COUNT=$(find allure-results -type f | wc -l)
-            echo "✓ Contains $RESULT_COUNT files"
+            echo "✓ allure-results exists with $RESULT_COUNT files"
             
             if [ "$RESULT_COUNT" -gt 0 ]; then
               echo "✓ Generating Allure report..."
-              allure generate allure-results --clean -o allure-report-${{ matrix.environment }}
-              echo "✓ Report generated"
+              allure generate allure-results --clean -o allure-report-Production
+              echo "✓ Report generated successfully"
+              ls -la allure-report-Production/index.html
             else
-              echo "⚠ Directory is empty"
+              echo "⚠ allure-results directory is empty - creating empty report"
+              mkdir -p allure-report-Production
             fi
-          elif [ -d "allure-results-release" ]; then
-            echo "✓ Using allure-results-release"
-            allure generate allure-results-release --clean -o allure-report-${{ matrix.environment }}
-          elif [ -d "allure-results-debug" ]; then
-            echo "✓ Using allure-results-debug"
-            allure generate allure-results-debug --clean -o allure-report-${{ matrix.environment }}
           else
-            echo "✗ No allure-results found"
-            mkdir -p allure-report-${{ matrix.environment }}
+            echo "⚠ No allure-results found - creating empty report"
+            mkdir -p allure-report-Production
           fi
       
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ matrix.environment }}-${{ github.run_number }}
-          path: AdvantageShopTestAutomation/allure-report-${{ matrix.environment }}/
+          name: allure-report-Production
+          path: AdvantageShopTestAutomation/allure-report-Production/
           retention-days: 30
           if-no-files-found: warn
       
@@ -160,7 +166,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ matrix.environment }}-${{ github.run_number }}
+          name: test-results-Production-${{ github.run_number }}
           path: AdvantageShopTestAutomation/TestResults/
           retention-days: 30
           if-no-files-found: warn
@@ -170,7 +176,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results-raw-${{ github.run_number }}
-          path: AdvantageShopTestAutomation/allure-results*/
+          path: AdvantageShopTestAutomation/allure-results/
           retention-days: 30
           if-no-files-found: warn
       

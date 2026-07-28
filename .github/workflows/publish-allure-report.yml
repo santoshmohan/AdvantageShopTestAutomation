@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
           fetch-depth: 0
@@ -26,25 +26,49 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
-          name: allure-report-Production-*
+          name: allure-report-Production
           path: ./report-download
 
       - name: Extract and prepare report
         run: |
-          echo "Setting up report directory..."
+          echo "=== Preparing Allure Report ==="
           
-          # Create report directory
+          # Remove old report
+          rm -rf allure-report-Production
           mkdir -p allure-report-Production
           
-          # Find and move the report contents
-          if [ -d "report-download" ]; then
-            # If it's nested, flatten it
-            find report-download -type f -exec mv {} allure-report-Production/ \;
+          # Check if report files exist in download directory
+          if [ -d "report-download" ] && [ "$(ls -A report-download)" ]; then
+            echo "✓ Report files found in report-download"
+            
+            # Check if files are directly in report-download or nested
+            if [ -f "report-download/index.html" ]; then
+              echo "✓ Files are directly in report-download - copying..."
+              cp -r report-download/* allure-report-Production/
+            else
+              # Files might be in a nested folder
+              echo "⚠ Files appear to be nested - attempting to flatten..."
+              find report-download -type f -name "*.html" -o -name "*.json" -o -name "*.css" -o -name "*.js" | while read file; do
+                mkdir -p "allure-report-Production/$(dirname "$file" | sed 's|report-download/||')"
+                cp "$file" "allure-report-Production/$(dirname "$file" | sed 's|report-download/||')/$(basename "$file")"
+              done
+            fi
+            
             rm -rf report-download
+          else
+            echo "✗ No report files found - creating placeholder"
+            mkdir -p allure-report-Production
           fi
           
-          echo "Report prepared"
-          ls -laR allure-report-Production/
+          echo ""
+          echo "=== Report Directory Contents ==="
+          if [ -f "allure-report-Production/index.html" ]; then
+            echo "✓ index.html exists"
+            ls -la allure-report-Production/ | head -20
+          else
+            echo "⚠ index.html not found"
+            find allure-report-Production -type f | head -20
+          fi
 
       - name: Create index page
         run: |
@@ -222,17 +246,19 @@ jobs:
           </body>
           </html>
           EOF
-          cat index.html
+          echo "✓ index.html created"
 
       - name: Commit and push to gh-pages
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Update Allure reports - $(date +'%Y-%m-%d %H:%M:%S UTC')" --allow-empty
+          git commit -m "Update Allure reports - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" --allow-empty
           git push origin gh-pages
 
       - name: Deploy status
         run: |
-          echo "✅ Reports published to GitHub Pages"
-          echo "📍 Available at: https://santoshmohan.github.io/AdvantageShopTestAutomation/"
+          echo "✅ Allure report published to GitHub Pages"
+          echo "🔗 Available at: https://santoshmohan.github.io/AdvantageShopTestAutomation/"
+          echo "📊 Environment: Production"
+          echo "⏰ Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
