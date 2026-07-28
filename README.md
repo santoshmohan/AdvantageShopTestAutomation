@@ -63,7 +63,7 @@ DOTNET_CLI_HOME="$TMPDIR" dotnet test --settings .runsettings/Production.runsett
 
 ## 📊 Sample Allure Report
 
-View a [sample Allure report](./sample-reports/allure-report/index.html) generated from test execution.
+View a [sample Allure report](./AdvantageShopTestAutomation/sample-reports/allure-report/index.html) generated from test execution.
 
 > **Note**: This sample report demonstrates the Allure reporting capabilities including test statistics, 
 > timeline, categories, and detailed test results with screenshots and logs.
