@@ -72,3 +72,4 @@ jobs:
           echo "✅ Tests completed for ${{ matrix.environment }}!"
           echo "📊 Allure report generated"
           echo "📝 Check artifacts for detailed reports"
+          
