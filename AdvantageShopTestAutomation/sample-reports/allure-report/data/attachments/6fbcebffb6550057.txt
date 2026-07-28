@@ -1,0 +1,52 @@
+2026-07-28 19:34:58.7338 [14] INFO BaseTest - ========== Individual Test Started: TestMandatoryFieldValidation ==========
+2026-07-28 19:35:04.4376 [14] INFO BrowserConfig - Firefox browser initialized successfully
+2026-07-28 19:35:04.9300 [14] INFO BrowserConfig - Browser firefox initialized for environment: Development
+2026-07-28 19:35:04.9300 [14] INFO BaseTest - WebDriver initialized successfully
+2026-07-28 19:35:04.9362 [14] INFO LoginRegisterTests - TEST CASE: LOG001 - Mandatory field error messages display & clear
+2026-07-28 19:35:04.9383 [14] INFO BasePage - HomePage initialized
+2026-07-28 19:35:04.9420 [14] INFO BasePage - Navigating to: https://www.advantageonlineshopping.com/
+2026-07-28 19:35:12.1779 [14] INFO BasePage - Successfully navigated to: https://www.advantageonlineshopping.com/
+2026-07-28 19:35:12.1793 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-07-28 19:35:12.2392 [14] INFO BasePage - Page loader disappeared
+2026-07-28 19:35:20.2406 [14] INFO BasePage - Home page loaded from: https://www.advantageonlineshopping.com/
+2026-07-28 19:35:20.2456 [14] DEBUG BasePage - Waiting for element to be present: User Icon (Attempt 1/4)
+2026-07-28 19:35:20.2532 [14] DEBUG BasePage - Waiting for element to be present: User Icon (Attempt 1/4)
+2026-07-28 19:35:20.2615 [14] DEBUG BasePage - Element User Icon is displayed: True
+2026-07-28 19:35:20.2630 [14] INFO LoginRegisterTests - STEP 1 PASSED: Home page loaded successfully
+2026-07-28 19:35:20.2630 [14] INFO BasePage - Clicking on user icon to open login/register modal
+2026-07-28 19:35:20.2630 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-07-28 19:35:20.2696 [14] INFO BasePage - Page loader disappeared
+2026-07-28 19:35:20.2696 [14] DEBUG BasePage - Attempting to click on: User Icon
+2026-07-28 19:35:20.2702 [14] DEBUG BasePage - Waiting for element to be clickable: User Icon
+2026-07-28 19:35:20.3718 [14] INFO BasePage - Successfully clicked on: User Icon
+2026-07-28 19:35:20.3718 [14] DEBUG BasePage - Waiting for element to be present: Close Modal (Attempt 1/4)
+2026-07-28 19:35:21.3755 [14] INFO BasePage - LoginRegisterModal initialized
+2026-07-28 19:35:21.3774 [14] DEBUG BasePage - Waiting for element to be present: Password Field (Attempt 1/4)
+2026-07-28 19:35:21.3838 [14] DEBUG BasePage - Element Password Field is displayed: True
+2026-07-28 19:35:21.3838 [14] INFO LoginRegisterTests - STEP 2 PASSED: Login/Register modal opened successfully
+2026-07-28 19:35:21.3840 [14] INFO BasePage - Clicking on 'CREATE NEW ACCOUNT' button
+2026-07-28 19:35:21.3840 [14] DEBUG BasePage - Attempting to click on: Create New Account Button
+2026-07-28 19:35:21.3840 [14] DEBUG BasePage - Waiting for element to be clickable: Create New Account Button
+2026-07-28 19:35:21.4091 [14] INFO BasePage - Successfully clicked on: Create New Account Button
+2026-07-28 19:35:21.4091 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-07-28 19:35:21.4162 [14] INFO BasePage - Page loader disappeared
+2026-07-28 19:35:22.4288 [14] INFO BasePage - RegisterPage initialized
+2026-07-28 19:35:22.4288 [14] INFO LoginRegisterTests - STEP 3 PASSED: Register page loaded successfully
+2026-07-28 19:35:22.4288 [14] INFO LoginRegisterTests - STEP 4: Interacting with form fields to trigger validation
+2026-07-28 19:35:23.4736 [14] DEBUG BasePage - Waiting for element to be present: Create Account Heading (Attempt 1/4)
+2026-07-28 19:35:23.4826 [14] DEBUG BasePage - Element Create Account Heading is displayed: True
+2026-07-28 19:35:23.4826 [14] INFO BasePage - Interacting with Username field
+2026-07-28 19:35:23.4826 [14] DEBUG BasePage - Attempting to click on: Username Field
+2026-07-28 19:35:23.4826 [14] DEBUG BasePage - Waiting for element to be clickable: Username Field
+2026-07-28 19:35:23.4976 [14] ERROR BasePage - Failed to click on element: Username FieldElement <input class="ng-pristine ng-untouched ng-valid ng-scope" name="usernameRegisterPage" type="text"> is not clickable at point (565,317) because another element <div class="loader"> obscures it    at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at AdvantageShopTestAutomation.Pages.BasePage.SafeClick(By locator, String elementName) in /Users/sid/Documents/Sandbox/AdvantageShopTestAutomation/AdvantageShopTestAutomation/Pages/BasePage.cs:line 148
+2026-07-28 19:35:23.5301 [14] ERROR LoginRegisterTests - Test failed with exceptionFailed to click on Username Field    at AdvantageShopTestAutomation.Pages.BasePage.SafeClick(By locator, String elementName) in /Users/sid/Documents/Sandbox/AdvantageShopTestAutomation/AdvantageShopTestAutomation/Pages/BasePage.cs:line 154
+   at AdvantageShopTestAutomation.Pages.RegisterPage.InteractWithUsernameField() in /Users/sid/Documents/Sandbox/AdvantageShopTestAutomation/AdvantageShopTestAutomation/Pages/RegisterPage.cs:line 34
+   at AdvantageShopTestAutomation.Tests.LoginRegisterTests.TestMandatoryFieldValidation() in /Users/sid/Documents/Sandbox/AdvantageShopTestAutomation/AdvantageShopTestAutomation/Tests/LoginRegisterTests.cs:line 53
+2026-07-28 19:35:23.6133 [14] INFO ScreenshotUtils - Screenshot saved: /Users/sid/Documents/Sandbox/AdvantageShopTestAutomation/AdvantageShopTestAutomation/bin/Debug/net10.0/Screenshots/TestMandatoryFieldValidation_2026-07-28_19-35-23-610.png
+2026-07-28 19:35:24.2126 [14] INFO BrowserConfig - Browser closed successfully
+2026-07-28 19:35:24.2126 [14] INFO BaseTest - ========== Individual Test Completed ==========

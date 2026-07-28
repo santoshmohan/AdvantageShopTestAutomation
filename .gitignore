@@ -12,9 +12,6 @@ out/
 *.sln.docstates
 
 # Test / coverage / reports
-TestResults/
-allure-results/
-allure-report/
 coverage/
 *.trx
 *.coverage
