@@ -55,10 +55,28 @@ public class BasePage
             {
                 try
                 {
+                    WaitForPageLoaderToDisappear();
+
                     var element = d.FindElement(locator);
-                    return element.Enabled && element.Displayed ? element : null;
+                    if (!element.Enabled || !element.Displayed)
+                    {
+                        return null;
+                    }
+
+                    try
+                    {
+                        return element.Enabled && element.Displayed && element.Location.Y >= 0 ? element : null;
+                    }
+                    catch (ElementNotInteractableException)
+                    {
+                        return null;
+                    }
                 }
                 catch (StaleElementReferenceException)
+                {
+                    return null;
+                }
+                catch (NoSuchElementException)
                 {
                     return null;
                 }
@@ -141,17 +159,41 @@ public class BasePage
     /// </summary>
     protected void SafeClick(By locator, string elementName)
     {
-        try
+        const int maxAttempts = 3;
+
+        for (var attempt = 1; attempt <= maxAttempts; attempt++)
         {
-            Logger.Debug($"Attempting to click on: {elementName}");
-            var element = WaitForElementClickable(locator, elementName);
-            element.Click();
-            Logger.Info($"Successfully clicked on: {elementName}");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error(ex, $"Failed to click on element: {elementName}");
-            throw new InvalidOperationException($"Failed to click on {elementName}", ex);
+            try
+            {
+                Logger.Debug($"Attempting to click on: {elementName} (attempt {attempt}/{maxAttempts})");
+                WaitForPageLoaderToDisappear();
+                var element = WaitForElementClickable(locator, elementName);
+                element.Click();
+                Logger.Info($"Successfully clicked on: {elementName}");
+                return;
+            }
+            catch (ElementClickInterceptedException ex)
+            {
+                if (attempt == maxAttempts)
+                {
+                    Logger.Error(ex, $"Failed to click on element after {maxAttempts} attempts: {elementName}");
+                    throw new InvalidOperationException($"Failed to click on {elementName}", ex);
+                }
+
+                Logger.Warn($"Click intercepted for {elementName}; retrying in 1 second...");
+                Thread.Sleep(1000);
+            }
+            catch (Exception ex)
+            {
+                if (attempt == maxAttempts)
+                {
+                    Logger.Error(ex, $"Failed to click on element: {elementName}");
+                    throw new InvalidOperationException($"Failed to click on {elementName}", ex);
+                }
+
+                Logger.Warn($"Click attempt {attempt} failed for {elementName}; retrying...");
+                Thread.Sleep(1000);
+            }
         }
     }
 

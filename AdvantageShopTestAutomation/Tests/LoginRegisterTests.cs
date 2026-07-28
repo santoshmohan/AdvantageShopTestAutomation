@@ -1,4 +1,7 @@
 using NUnit.Framework;
+using Allure.NUnit;
+using Allure.Net.Commons;
+using Allure.NUnit.Attributes;
 using NLog;
 using AdvantageShopTestAutomation.Tests.Base;
 using AdvantageShopTestAutomation.Pages;
@@ -10,12 +13,14 @@ namespace AdvantageShopTestAutomation.Tests;
 /// Test cases for login and registration functionality
 /// </summary>
 [TestFixture]
+[AllureNUnit]
 [Category("LoginRegister")]
 public class LoginRegisterTests : BaseTest
 {
     private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
 
     [Test]
+    [AllureTag("LoginRegister")]
     [Category("Validation")]
     [Description("LOG001 - Mandatory field error messages display & clear")]
     public void TestMandatoryFieldValidation()
