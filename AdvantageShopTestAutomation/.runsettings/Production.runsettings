@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <RunConfiguration>
+    <MaxCpuCount>4</MaxCpuCount>
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+    <TargetFramework>net10.0</TargetFramework>
+    <TestAdapterPaths>.</TestAdapterPaths>
+  </RunConfiguration>
+
+  <TestRunParameters>
+    <Parameter name="environment" value="Production" />
+    <Parameter name="browser" value="firefox" />
+    <Parameter name="headless" value="false" />
+    <Parameter name="timeout" value="25" />
+  </TestRunParameters>
+
+  <NLog>
+    <logger name="*" minlevel="Warning" />
+  </NLog>
+
+  <Allure>
+    <OutputPath>allure-results</OutputPath>
+  </Allure>
+</RunSettings>
