@@ -31,6 +31,12 @@ jobs:
         working-directory: ./AdvantageShopTestAutomation
         run: dotnet build --no-restore --configuration Release
       
+      - name: Create allure-results directory
+        working-directory: ./AdvantageShopTestAutomation
+        run: |
+          mkdir -p allure-results
+          echo "allure-results directory created"
+      
       - name: Run tests against ${{ matrix.environment }} (Headless Mode)
         working-directory: ./AdvantageShopTestAutomation
         run: dotnet test --no-build --configuration Release --settings .runsettings/${{ matrix.environment }}.runsettings --logger "console;verbosity=detailed" --logger "trx;LogFileName=TestResults-${{ matrix.environment }}.trx" --results-directory "TestResults"
@@ -43,7 +49,8 @@ jobs:
           echo "Checking for allure-results directory..."
           if [ -d "allure-results" ]; then
             echo "✓ allure-results directory found"
-            ls -la allure-results/
+            echo "Contents:"
+            ls -la allure-results/ || echo "Directory is empty"
           else
             echo "✗ allure-results directory NOT found"
             echo "Current directory contents:"
@@ -58,14 +65,35 @@ jobs:
         if: always()
         working-directory: ./AdvantageShopTestAutomation
         run: |
-          if [ -d "allure-results" ]; then
+          if [ -d "allure-results" ] && [ "$(ls -A allure-results)" ]; then
             echo "Generating Allure report from allure-results..."
             allure generate allure-results --clean -o allure-report-${{ matrix.environment }}
-            echo "Report generated successfully"
+            echo "✓ Report generated successfully"
           else
-            echo "ERROR: No allure-results directory found. Creating empty report..."
+            echo "⚠ No test results found in allure-results. Creating sample report..."
             mkdir -p allure-report-${{ matrix.environment }}
-            echo "Empty report directory created"
+            cat > allure-report-${{ matrix.environment }}/index.html << 'EOF'
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>Allure Report - No Results</title>
+              <style>
+                body { font-family: Arial; margin: 20px; }
+                .warning { color: #ff6600; font-size: 18px; }
+              </style>
+            </head>
+            <body>
+              <h1 class="warning">⚠ No Test Results Generated</h1>
+              <p>The allure-results directory is empty. This may indicate:</p>
+              <ul>
+                <li>Tests did not run successfully</li>
+                <li>Allure.NUnit is not properly configured</li>
+                <li>No tests were found</li>
+              </ul>
+              <p>Check the workflow logs for details.</p>
+            </body>
+            </html>
+            EOF
           fi
       
       - name: Upload Allure Report

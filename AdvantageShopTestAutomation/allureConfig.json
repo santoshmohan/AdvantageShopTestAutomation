@@ -1,6 +1,8 @@
 {
   "allure": {
-    "directory": "allure-results",
-    "clean": true
+    "directory": "./allure-results",
+    "clean": true,
+    "labels": [],
+    "links": []
   }
 }
