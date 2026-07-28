@@ -61,12 +61,31 @@ You can also use the production run settings:
 DOTNET_CLI_HOME="$TMPDIR" dotnet test --settings .runsettings/Production.runsettings --logger "console;verbosity=detailed"
 ```
 
-## 📊 Sample Allure Report
+## 5. 📊 Test Results & Reports
 
-View a [sample Allure report](./AdvantageShopTestAutomation/sample-reports/allure-report/index.html) generated from test execution.
+### Live Allure Reports
+View the **latest test execution results** with detailed metrics, timeline, and test breakdowns:
 
-> **Note**: This sample report demonstrates the Allure reporting capabilities including test statistics, 
-> timeline, categories, and detailed test results with screenshots and logs.
+[🔗 View Live Allure Report](https://santoshmohan.github.io/AdvantageShopTestAutomation/allure-report-Production/index.html)
+
+The reports are automatically generated and published after each test run via GitHub Actions.
+
+What you'll see in the report:
+
+- ✅ Test execution summary and statistics
+- 📈 Pass/Fail/Skip breakdown
+- ⏱️ Test duration and timeline
+- 🐛 Failure details with screenshots and logs
+- 📋 Test categories and severity levels
+- 📊 Historical trends over time
+
+## 6. Continuous Integration
+
+Tests run automatically on:
+
+- **Daily schedule** at 9:00 AM UTC
+- **Manual trigger** via GitHub Actions workflow
+- **Every push** to the main branch
 
 ## Notes
 - Browser selection and timeout values can be controlled through the run settings files.

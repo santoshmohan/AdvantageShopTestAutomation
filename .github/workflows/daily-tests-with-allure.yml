@@ -31,7 +31,11 @@ jobs:
       - name: Restore dependencies
         working-directory: ./AdvantageShopTestAutomation
         run: dotnet restore
-      
+
+      - name: Check for vulnerable packages
+        working-directory: ./AdvantageShopTestAutomation
+        run: dotnet list package --vulnerable
+
       - name: Build project
         working-directory: ./AdvantageShopTestAutomation
         run: dotnet build --no-restore --configuration Release
