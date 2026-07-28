@@ -10,6 +10,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [Development,  Production]
     
     steps:
       - name: Checkout code
@@ -18,7 +21,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'  # Adjust to your .NET version
+          dotnet-version: '10.0.x'
       
       - name: Restore dependencies
         run: dotnet restore
@@ -26,49 +29,42 @@ jobs:
       - name: Build project
         run: dotnet build --no-restore --configuration Release
       
-      - name: Run tests
-        run: dotnet test --no-build --configuration Release --logger "trx" --results-directory "TestResults"
-        continue-on-error: true  # Continue even if tests fail
+      - name: Run tests against ${{ matrix.environment }}
+        run: dotnet test --no-build --configuration Release --settings .runsettings/${{ matrix.environment }}.runsettings --logger "console;verbosity=detailed" --logger "trx;LogFileName=TestResults-${{ matrix.environment }}.trx" --results-directory "TestResults"
+        continue-on-error: true
       
       - name: Install Allure Commandline
         if: always()
         run: npm install -g allure-commandline
       
-      - name: Generate Allure Report
+      - name: Generate Allure Report for ${{ matrix.environment }}
         if: always()
-        run: allure generate allure-results --clean -o allure-report
+        run: |
+          if [ -d "allure-results" ]; then
+            allure generate allure-results --clean -o allure-report-${{ matrix.environment }}
+          else
+            echo "No allure-results directory found for ${{ matrix.environment }}"
+          fi
       
-      - name: Upload Allure Report as Artifact
+      - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: allure-report-${{ github.run_number }}
-          path: allure-report/
+          name: allure-report-${{ matrix.environment }}-${{ github.run_number }}
+          path: allure-report-${{ matrix.environment }}/
           retention-days: 30
       
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: test-results-${{ github.run_number }}
+          name: test-results-${{ matrix.environment }}-${{ github.run_number }}
           path: TestResults/
           retention-days: 30
       
-      - name: Comment on PR with Report Link
-        if: always() && github.event_name == 'pull_request'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '📊 **Test Report Generated**\n\nDownload the Allure report from the [Actions artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})'
-            })
-
       - name: Test Summary
         if: always()
         run: |
-          echo "✅ Tests completed!"
+          echo "✅ Tests completed for ${{ matrix.environment }}!"
           echo "📊 Allure report generated"
           echo "📝 Check artifacts for detailed reports"
