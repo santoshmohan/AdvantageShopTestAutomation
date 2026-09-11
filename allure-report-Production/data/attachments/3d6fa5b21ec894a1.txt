@@ -1,0 +1,186 @@
+2026-09-11 13:13:20.1028 [14] INFO BaseTest - ========== Individual Test Started: TestMandatoryFieldValidation ==========
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+Connection refused (localhost:44025)
+2026-09-11 13:13:34.1012 [14] INFO BrowserConfig - Firefox browser initialized successfully
+2026-09-11 13:13:34.1066 [14] INFO BrowserConfig - Browser firefox initialized for environment: Production
+2026-09-11 13:13:34.1066 [14] INFO BaseTest - WebDriver initialized successfully
+2026-09-11 13:13:34.1092 [14] INFO LoginRegisterTests - TEST CASE: LOG001 - Mandatory field error messages display & clear
+2026-09-11 13:13:34.1109 [14] INFO BasePage - HomePage initialized
+2026-09-11 13:13:34.1117 [14] INFO BasePage - Navigating to: https://www.advantageonlineshopping.com/
+2026-09-11 13:13:35.0782 [14] INFO BasePage - Successfully navigated to: https://www.advantageonlineshopping.com/
+2026-09-11 13:13:35.0787 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:35.2079 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:43.2081 [14] INFO BasePage - Home page loaded from: https://www.advantageonlineshopping.com/
+2026-09-11 13:13:43.2102 [14] DEBUG BasePage - Waiting for element to be present: User Icon (Attempt 1/4)
+2026-09-11 13:13:43.2185 [14] DEBUG BasePage - Waiting for element to be present: User Icon (Attempt 1/4)
+2026-09-11 13:13:43.2302 [14] DEBUG BasePage - Element User Icon is displayed: True
+2026-09-11 13:13:43.2311 [14] INFO LoginRegisterTests - STEP 1 PASSED: Home page loaded successfully
+2026-09-11 13:13:43.2311 [14] INFO BasePage - Clicking on user icon to open login/register modal
+2026-09-11 13:13:43.2311 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:43.2416 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:43.2416 [14] DEBUG BasePage - Attempting to click on: User Icon (attempt 1/3)
+2026-09-11 13:13:43.2416 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:43.2512 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:43.2517 [14] DEBUG BasePage - Waiting for element to be clickable: User Icon
+2026-09-11 13:13:43.2517 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:43.2615 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:43.3879 [14] INFO BasePage - Successfully clicked on: User Icon
+2026-09-11 13:13:43.3879 [14] DEBUG BasePage - Waiting for element to be present: Close Modal (Attempt 1/4)
+2026-09-11 13:13:44.3908 [14] INFO BasePage - LoginRegisterModal initialized
+2026-09-11 13:13:44.3943 [14] DEBUG BasePage - Waiting for element to be present: Password Field (Attempt 1/4)
+2026-09-11 13:13:44.4060 [14] DEBUG BasePage - Element Password Field is displayed: True
+2026-09-11 13:13:44.4060 [14] INFO LoginRegisterTests - STEP 2 PASSED: Login/Register modal opened successfully
+2026-09-11 13:13:44.4060 [14] INFO BasePage - Clicking on 'CREATE NEW ACCOUNT' button
+2026-09-11 13:13:44.4060 [14] DEBUG BasePage - Attempting to click on: Create New Account Button (attempt 1/3)
+2026-09-11 13:13:44.4060 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:44.4166 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:44.4166 [14] DEBUG BasePage - Waiting for element to be clickable: Create New Account Button
+2026-09-11 13:13:44.4166 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:44.4262 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:44.4758 [14] INFO BasePage - Successfully clicked on: Create New Account Button
+2026-09-11 13:13:44.4758 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:44.6220 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:45.6307 [14] INFO BasePage - RegisterPage initialized
+2026-09-11 13:13:45.6307 [14] INFO LoginRegisterTests - STEP 3 PASSED: Register page loaded successfully
+2026-09-11 13:13:45.6307 [14] INFO LoginRegisterTests - STEP 4: Interacting with form fields to trigger validation
+2026-09-11 13:13:45.6336 [14] DEBUG BasePage - Waiting for element to be present: Create Account Heading (Attempt 1/4)
+2026-09-11 13:13:45.6434 [14] DEBUG BasePage - Element Create Account Heading is displayed: True
+2026-09-11 13:13:45.6437 [14] INFO BasePage - Interacting with Username field
+2026-09-11 13:13:45.6437 [14] DEBUG BasePage - Attempting to click on: Username Field (attempt 1/3)
+2026-09-11 13:13:45.6437 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:45.6521 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:45.6521 [14] DEBUG BasePage - Waiting for element to be clickable: Username Field
+2026-09-11 13:13:45.6521 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:45.6602 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:45.7385 [14] INFO BasePage - Successfully clicked on: Username Field
+2026-09-11 13:13:45.7387 [14] DEBUG BasePage - Attempting to click on: Email Field (attempt 1/3)
+2026-09-11 13:13:45.7387 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:45.7497 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:45.7497 [14] DEBUG BasePage - Waiting for element to be clickable: Email Field
+2026-09-11 13:13:45.7497 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:45.7583 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:45.8456 [14] INFO BasePage - Successfully clicked on: Email Field
+2026-09-11 13:13:45.8456 [14] INFO BasePage - Username field interaction completed
+2026-09-11 13:13:45.8456 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-11 13:13:46.8465 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:46.8504 [14] INFO BasePage - Error message count: 1
+2026-09-11 13:13:46.8504 [14] INFO LoginRegisterTests - Error count after username field interaction: 1
+2026-09-11 13:13:46.8515 [14] INFO BasePage - Interacting with Email field
+2026-09-11 13:13:46.8516 [14] DEBUG BasePage - Attempting to click on: Email Field (attempt 1/3)
+2026-09-11 13:13:46.8516 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:46.8608 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:46.8608 [14] DEBUG BasePage - Waiting for element to be clickable: Email Field
+2026-09-11 13:13:46.8608 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:46.8731 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:46.9508 [14] INFO BasePage - Successfully clicked on: Email Field
+2026-09-11 13:13:46.9508 [14] DEBUG BasePage - Attempting to click on: Password Field (attempt 1/3)
+2026-09-11 13:13:46.9508 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:46.9664 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:46.9664 [14] DEBUG BasePage - Waiting for element to be clickable: Password Field
+2026-09-11 13:13:46.9664 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:46.9744 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:47.0684 [14] INFO BasePage - Successfully clicked on: Password Field
+2026-09-11 13:13:47.0684 [14] INFO BasePage - Email field interaction completed
+2026-09-11 13:13:47.0684 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-11 13:13:48.0686 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:48.0711 [14] INFO BasePage - Error message count: 2
+2026-09-11 13:13:48.0711 [14] INFO LoginRegisterTests - Error count after email field interaction: 2
+2026-09-11 13:13:48.0716 [14] INFO BasePage - Interacting with Password field
+2026-09-11 13:13:48.0716 [14] DEBUG BasePage - Attempting to click on: Password Field (attempt 1/3)
+2026-09-11 13:13:48.0716 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:48.0811 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:48.0811 [14] DEBUG BasePage - Waiting for element to be clickable: Password Field
+2026-09-11 13:13:48.0811 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:48.0896 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:48.1673 [14] INFO BasePage - Successfully clicked on: Password Field
+2026-09-11 13:13:48.1673 [14] DEBUG BasePage - Attempting to click on: Confirm Password Field (attempt 1/3)
+2026-09-11 13:13:48.1673 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:48.1780 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:48.1780 [14] DEBUG BasePage - Waiting for element to be clickable: Confirm Password Field
+2026-09-11 13:13:48.1780 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:48.1894 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:48.2764 [14] INFO BasePage - Successfully clicked on: Confirm Password Field
+2026-09-11 13:13:48.2764 [14] INFO BasePage - Password field interaction completed
+2026-09-11 13:13:48.2764 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-11 13:13:49.2766 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:49.2790 [14] INFO BasePage - Error message count: 3
+2026-09-11 13:13:49.2790 [14] INFO LoginRegisterTests - Error count after password field interaction: 3
+2026-09-11 13:13:49.2790 [14] INFO BasePage - Interacting with Confirm Password field
+2026-09-11 13:13:49.2790 [14] DEBUG BasePage - Attempting to click on: Confirm Password Field (attempt 1/3)
+2026-09-11 13:13:49.2790 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:49.2891 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:49.2891 [14] DEBUG BasePage - Waiting for element to be clickable: Confirm Password Field
+2026-09-11 13:13:49.2891 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:49.2971 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:49.3746 [14] INFO BasePage - Successfully clicked on: Confirm Password Field
+2026-09-11 13:13:49.3746 [14] DEBUG BasePage - Attempting to click on: Username Field (attempt 1/3)
+2026-09-11 13:13:49.3746 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:49.3850 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:49.3850 [14] DEBUG BasePage - Waiting for element to be clickable: Username Field
+2026-09-11 13:13:49.3850 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-11 13:13:49.3940 [14] INFO BasePage - Page loader disappeared
+2026-09-11 13:13:49.4867 [14] INFO BasePage - Successfully clicked on: Username Field
+2026-09-11 13:13:49.4867 [14] INFO BasePage - Confirm Password field interaction completed
+2026-09-11 13:13:49.4867 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-11 13:13:50.4868 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:50.4891 [14] INFO BasePage - Error message count: 3
+2026-09-11 13:13:50.4891 [14] INFO LoginRegisterTests - Total error count after all field interactions: 3
+2026-09-11 13:13:50.4891 [14] INFO LoginRegisterTests - STEP 4 PASSED: Validation errors displayed correctly
+2026-09-11 13:13:50.4891 [14] INFO LoginRegisterTests - STEP 5: Verifying error message content
+2026-09-11 13:13:50.4899 [14] INFO BasePage - Checking if error message is displayed: Username
+2026-09-11 13:13:50.4899 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:50.5092 [14] WARN BasePage - Error message not found: Username
+2026-09-11 13:13:50.5092 [14] INFO BasePage - Checking if error message is displayed: required
+2026-09-11 13:13:50.5092 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:50.5158 [14] INFO BasePage - Error message found: required
+2026-09-11 13:13:50.5158 [14] INFO BasePage - Checking if error message is displayed: Email
+2026-09-11 13:13:50.5158 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:50.5226 [14] INFO BasePage - Error message found: Email
+2026-09-11 13:13:50.5226 [14] INFO BasePage - Checking if error message is displayed: Password
+2026-09-11 13:13:50.5226 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:13:50.5339 [14] INFO BasePage - Error message found: Password
+2026-09-11 13:13:50.5339 [14] INFO LoginRegisterTests - STEP 5 PASSED: All error messages contain correct content
+2026-09-11 13:13:50.5339 [14] INFO LoginRegisterTests - STEP 6: Generating test data and entering valid data in all fields
+2026-09-11 13:13:50.5768 [14] DEBUG TestDataGenerator - Generated unique username: Auto_Abigayle.S
+2026-09-11 13:13:50.5768 [14] DEBUG TestDataGenerator - Generated unique email: Cortney0@example.com
+2026-09-11 13:13:50.5768 [14] DEBUG TestDataGenerator - Generated secure password: PassW0rd@1
+2026-09-11 13:13:50.5768 [14] INFO LoginRegisterTests - Generated Test Data:
+2026-09-11 13:13:50.5768 [14] INFO LoginRegisterTests -   Username: Auto_Abigayle.S
+2026-09-11 13:13:50.5768 [14] INFO LoginRegisterTests -   Email: Cortney0@example.com
+2026-09-11 13:13:50.5768 [14] INFO LoginRegisterTests -   First Name: Keyshawn
+2026-09-11 13:13:50.5768 [14] INFO LoginRegisterTests -   Last Name: Halvorson
+2026-09-11 13:13:50.5835 [14] INFO LoginRegisterTests -   Full Address: 2043 Dibbert Ports, Cruickshankside, Indiana 38995-9001, French Southern Territories
+2026-09-11 13:13:50.5836 [14] INFO BasePage - Filling complete registration form
+2026-09-11 13:13:50.5836 [14] INFO BasePage - Entering username
+2026-09-11 13:13:50.5836 [14] DEBUG BasePage - Attempting to input text in: Username Field
+2026-09-11 13:13:50.5836 [14] DEBUG BasePage - Waiting for element to be visible: Username Field
+2026-09-11 13:13:50.6268 [14] INFO BasePage - Successfully entered text in: Username Field
+2026-09-11 13:13:50.6268 [14] INFO BasePage - Entering email
+2026-09-11 13:13:50.6268 [14] DEBUG BasePage - Attempting to input text in: Email Field
+2026-09-11 13:13:50.6268 [14] DEBUG BasePage - Waiting for element to be visible: Email Field
+2026-09-11 13:13:50.6829 [14] INFO BasePage - Successfully entered text in: Email Field
+2026-09-11 13:13:50.6829 [14] INFO BasePage - Entering password
+2026-09-11 13:13:50.6829 [14] DEBUG BasePage - Attempting to input text in: Password Field
+2026-09-11 13:13:50.6829 [14] DEBUG BasePage - Waiting for element to be visible: Password Field
+2026-09-11 13:13:50.7263 [14] INFO BasePage - Successfully entered text in: Password Field
+2026-09-11 13:13:50.7263 [14] INFO BasePage - Entering confirm password
+2026-09-11 13:13:50.7266 [14] DEBUG BasePage - Attempting to input text in: Confirm Password Field
+2026-09-11 13:13:50.7266 [14] DEBUG BasePage - Waiting for element to be visible: Confirm Password Field
+2026-09-11 13:13:50.7632 [14] INFO BasePage - Successfully entered text in: Confirm Password Field
+2026-09-11 13:13:50.7632 [14] DEBUG BaseTest - Waiting for 2 seconds
+2026-09-11 13:13:52.7633 [14] INFO LoginRegisterTests - STEP 6 PASSED: Valid data entered successfully
+2026-09-11 13:13:52.7633 [14] INFO LoginRegisterTests - STEP 7: Verifying all errors are cleared
+2026-09-11 13:13:52.7633 [14] INFO BasePage - Retrieving error messages
+2026-09-11 13:14:32.7672 [14] INFO BasePage - Error message count: 0
+2026-09-11 13:14:32.7672 [14] INFO BasePage - All errors cleared: True (Error count: 0)
+2026-09-11 13:14:32.7672 [14] INFO LoginRegisterTests - STEP 7 PASSED: All validation errors cleared successfully
+2026-09-11 13:14:32.7672 [14] INFO LoginRegisterTests - TEST CASE LOG001 PASSED SUCCESSFULLY
+2026-09-11 13:14:33.3206 [14] INFO BrowserConfig - Browser closed successfully
+2026-09-11 13:14:33.3206 [14] INFO BaseTest - ========== Individual Test Completed ==========
