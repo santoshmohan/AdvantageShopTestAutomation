@@ -1,0 +1,342 @@
+2026-09-19 12:51:52.8860 [14] INFO BaseTest - ========== Individual Test Started: TestMandatoryFieldValidation ==========
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+Connection refused (localhost:34697)
+2026-09-19 12:52:17.9620 [14] INFO BrowserConfig - Firefox browser initialized successfully
+2026-09-19 12:52:17.9635 [14] INFO BrowserConfig - Browser firefox initialized for environment: Production
+2026-09-19 12:52:17.9635 [14] INFO BaseTest - WebDriver initialized successfully
+2026-09-19 12:52:17.9652 [14] INFO LoginRegisterTests - TEST CASE: LOG001 - Mandatory field error messages display & clear
+2026-09-19 12:52:17.9663 [14] INFO BasePage - HomePage initialized
+2026-09-19 12:52:17.9667 [14] INFO BasePage - Navigating to: https://www.advantageonlineshopping.com/
+2026-09-19 12:52:19.1714 [14] INFO BasePage - Successfully navigated to: https://www.advantageonlineshopping.com/
+2026-09-19 12:52:19.1890 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:19.3116 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:27.3117 [14] INFO BasePage - Home page loaded from: https://www.advantageonlineshopping.com/
+2026-09-19 12:52:27.3126 [14] DEBUG BasePage - Waiting for element to be present: User Icon (Attempt 1/4)
+2026-09-19 12:52:27.3190 [14] DEBUG BasePage - Waiting for element to be present: User Icon (Attempt 1/4)
+2026-09-19 12:52:27.3290 [14] DEBUG BasePage - Element User Icon is displayed: True
+2026-09-19 12:52:27.3297 [14] INFO LoginRegisterTests - STEP 1 PASSED: Home page loaded successfully
+2026-09-19 12:52:27.3297 [14] INFO BasePage - Clicking on user icon to open login/register modal
+2026-09-19 12:52:27.3297 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:27.3382 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:27.3387 [14] DEBUG BasePage - Attempting to click on: User Icon (attempt 1/3)
+2026-09-19 12:52:27.3387 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:27.3472 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:27.3475 [14] DEBUG BasePage - Waiting for element to be clickable: User Icon
+2026-09-19 12:52:27.3475 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:27.3551 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:27.5418 [14] INFO BasePage - Successfully clicked on: User Icon
+2026-09-19 12:52:27.5418 [14] DEBUG BasePage - Waiting for element to be present: Close Modal (Attempt 1/4)
+2026-09-19 12:52:28.5448 [14] INFO BasePage - LoginRegisterModal initialized
+2026-09-19 12:52:28.5473 [14] DEBUG BasePage - Waiting for element to be present: Password Field (Attempt 1/4)
+2026-09-19 12:52:28.5558 [14] DEBUG BasePage - Element Password Field is displayed: True
+2026-09-19 12:52:28.5558 [14] INFO LoginRegisterTests - STEP 2 PASSED: Login/Register modal opened successfully
+2026-09-19 12:52:28.5558 [14] INFO BasePage - Clicking on 'CREATE NEW ACCOUNT' button
+2026-09-19 12:52:28.5558 [14] DEBUG BasePage - Attempting to click on: Create New Account Button (attempt 1/3)
+2026-09-19 12:52:28.5558 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:28.5631 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:28.5631 [14] DEBUG BasePage - Waiting for element to be clickable: Create New Account Button
+2026-09-19 12:52:28.5631 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:28.5699 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:28.6107 [14] INFO BasePage - Successfully clicked on: Create New Account Button
+2026-09-19 12:52:28.6814 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:28.7529 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:29.7592 [14] INFO BasePage - RegisterPage initialized
+2026-09-19 12:52:29.7594 [14] INFO LoginRegisterTests - STEP 3 PASSED: Register page loaded successfully
+2026-09-19 12:52:29.7594 [14] INFO LoginRegisterTests - STEP 4: Interacting with form fields to trigger validation
+2026-09-19 12:52:29.7616 [14] DEBUG BasePage - Waiting for element to be present: Create Account Heading (Attempt 1/4)
+2026-09-19 12:52:29.7694 [14] DEBUG BasePage - Element Create Account Heading is displayed: True
+2026-09-19 12:52:29.7694 [14] INFO BasePage - Interacting with Username field
+2026-09-19 12:52:29.7694 [14] DEBUG BasePage - Attempting to click on: Username Field (attempt 1/3)
+2026-09-19 12:52:29.7694 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:29.7762 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:29.7762 [14] DEBUG BasePage - Waiting for element to be clickable: Username Field
+2026-09-19 12:52:29.7762 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:29.7825 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:29.8599 [14] INFO BasePage - Successfully clicked on: Username Field
+2026-09-19 12:52:29.8599 [14] DEBUG BasePage - Attempting to click on: Email Field (attempt 1/3)
+2026-09-19 12:52:29.8599 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:29.8700 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:29.8700 [14] DEBUG BasePage - Waiting for element to be clickable: Email Field
+2026-09-19 12:52:29.8700 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:29.8770 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:29.9572 [14] INFO BasePage - Successfully clicked on: Email Field
+2026-09-19 12:52:29.9572 [14] INFO BasePage - Username field interaction completed
+2026-09-19 12:52:29.9574 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-19 12:52:30.9579 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:30.9604 [14] INFO BasePage - Error message count: 1
+2026-09-19 12:52:30.9604 [14] INFO LoginRegisterTests - Error count after username field interaction: 1
+2026-09-19 12:52:30.9604 [14] INFO BasePage - Interacting with Email field
+2026-09-19 12:52:30.9604 [14] DEBUG BasePage - Attempting to click on: Email Field (attempt 1/3)
+2026-09-19 12:52:30.9604 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:30.9683 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:30.9683 [14] DEBUG BasePage - Waiting for element to be clickable: Email Field
+2026-09-19 12:52:30.9683 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:30.9777 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:31.0499 [14] INFO BasePage - Successfully clicked on: Email Field
+2026-09-19 12:52:31.0499 [14] DEBUG BasePage - Attempting to click on: Password Field (attempt 1/3)
+2026-09-19 12:52:31.0499 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:31.0617 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:31.0617 [14] DEBUG BasePage - Waiting for element to be clickable: Password Field
+2026-09-19 12:52:31.0617 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:31.0746 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:31.1671 [14] INFO BasePage - Successfully clicked on: Password Field
+2026-09-19 12:52:31.1671 [14] INFO BasePage - Email field interaction completed
+2026-09-19 12:52:31.1671 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-19 12:52:32.1673 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:32.1703 [14] INFO BasePage - Error message count: 2
+2026-09-19 12:52:32.1703 [14] INFO LoginRegisterTests - Error count after email field interaction: 2
+2026-09-19 12:52:32.1704 [14] INFO BasePage - Interacting with Password field
+2026-09-19 12:52:32.1704 [14] DEBUG BasePage - Attempting to click on: Password Field (attempt 1/3)
+2026-09-19 12:52:32.1704 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:32.1778 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:32.1778 [14] DEBUG BasePage - Waiting for element to be clickable: Password Field
+2026-09-19 12:52:32.1778 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:32.1842 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:32.2559 [14] INFO BasePage - Successfully clicked on: Password Field
+2026-09-19 12:52:32.2559 [14] DEBUG BasePage - Attempting to click on: Confirm Password Field (attempt 1/3)
+2026-09-19 12:52:32.2559 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:32.2629 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:32.2629 [14] DEBUG BasePage - Waiting for element to be clickable: Confirm Password Field
+2026-09-19 12:52:32.2629 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:32.2713 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:32.3544 [14] INFO BasePage - Successfully clicked on: Confirm Password Field
+2026-09-19 12:52:32.3544 [14] INFO BasePage - Password field interaction completed
+2026-09-19 12:52:32.3544 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-19 12:52:33.3546 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:33.3567 [14] INFO BasePage - Error message count: 3
+2026-09-19 12:52:33.3567 [14] INFO LoginRegisterTests - Error count after password field interaction: 3
+2026-09-19 12:52:33.3567 [14] INFO BasePage - Interacting with Confirm Password field
+2026-09-19 12:52:33.3567 [14] DEBUG BasePage - Attempting to click on: Confirm Password Field (attempt 1/3)
+2026-09-19 12:52:33.3567 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:33.3637 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:33.3637 [14] DEBUG BasePage - Waiting for element to be clickable: Confirm Password Field
+2026-09-19 12:52:33.3637 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:33.3701 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:33.4416 [14] INFO BasePage - Successfully clicked on: Confirm Password Field
+2026-09-19 12:52:33.4416 [14] DEBUG BasePage - Attempting to click on: Username Field (attempt 1/3)
+2026-09-19 12:52:33.4416 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:33.4486 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:33.4486 [14] DEBUG BasePage - Waiting for element to be clickable: Username Field
+2026-09-19 12:52:33.4486 [14] INFO BasePage - Waiting for the page loader to disappear
+2026-09-19 12:52:33.4548 [14] INFO BasePage - Page loader disappeared
+2026-09-19 12:52:33.5384 [14] INFO BasePage - Successfully clicked on: Username Field
+2026-09-19 12:52:33.5384 [14] INFO BasePage - Confirm Password field interaction completed
+2026-09-19 12:52:33.5384 [14] DEBUG BaseTest - Waiting for 1 seconds
+2026-09-19 12:52:34.5385 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:34.5407 [14] INFO BasePage - Error message count: 3
+2026-09-19 12:52:34.5407 [14] INFO LoginRegisterTests - Total error count after all field interactions: 3
+2026-09-19 12:52:34.5407 [14] INFO LoginRegisterTests - STEP 4 PASSED: Validation errors displayed correctly
+2026-09-19 12:52:34.5407 [14] INFO LoginRegisterTests - STEP 5: Verifying error message content
+2026-09-19 12:52:34.5407 [14] INFO BasePage - Checking if error message is displayed: Username
+2026-09-19 12:52:34.5407 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:34.5564 [14] WARN BasePage - Error message not found: Username
+2026-09-19 12:52:34.5564 [14] INFO BasePage - Checking if error message is displayed: required
+2026-09-19 12:52:34.5564 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:34.5618 [14] INFO BasePage - Error message found: required
+2026-09-19 12:52:34.5618 [14] INFO BasePage - Checking if error message is displayed: Email
+2026-09-19 12:52:34.5618 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:34.5670 [14] INFO BasePage - Error message found: Email
+2026-09-19 12:52:34.5670 [14] INFO BasePage - Checking if error message is displayed: Password
+2026-09-19 12:52:34.5670 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:52:34.5762 [14] INFO BasePage - Error message found: Password
+2026-09-19 12:52:34.5762 [14] INFO LoginRegisterTests - STEP 5 PASSED: All error messages contain correct content
+2026-09-19 12:52:34.5762 [14] INFO LoginRegisterTests - STEP 6: Generating test data and entering valid data in all fields
+2026-09-19 12:52:34.6087 [14] DEBUG TestDataGenerator - Generated unique username: Auto_Christy_Ef
+2026-09-19 12:52:34.6094 [14] DEBUG TestDataGenerator - Generated unique email: Michel.DAmore58@example.com
+2026-09-19 12:52:34.6094 [14] DEBUG TestDataGenerator - Generated secure password: PassW0rd@1
+2026-09-19 12:52:34.6094 [14] INFO LoginRegisterTests - Generated Test Data:
+2026-09-19 12:52:34.6094 [14] INFO LoginRegisterTests -   Username: Auto_Christy_Ef
+2026-09-19 12:52:34.6094 [14] INFO LoginRegisterTests -   Email: Michel.DAmore58@example.com
+2026-09-19 12:52:34.6094 [14] INFO LoginRegisterTests -   First Name: Joaquin
+2026-09-19 12:52:34.6094 [14] INFO LoginRegisterTests -   Last Name: Jerde
+2026-09-19 12:52:34.6147 [14] INFO LoginRegisterTests -   Full Address: 9565 Marcel Parks, Rickieview, Colorado 20282-6443, Greenland
+2026-09-19 12:52:34.6147 [14] INFO BasePage - Filling complete registration form
+2026-09-19 12:52:34.6147 [14] INFO BasePage - Entering username
+2026-09-19 12:52:34.6147 [14] DEBUG BasePage - Attempting to input text in: Username Field
+2026-09-19 12:52:34.6147 [14] DEBUG BasePage - Waiting for element to be visible: Username Field
+2026-09-19 12:52:34.6500 [14] INFO BasePage - Successfully entered text in: Username Field
+2026-09-19 12:52:34.6500 [14] INFO BasePage - Entering email
+2026-09-19 12:52:34.6500 [14] DEBUG BasePage - Attempting to input text in: Email Field
+2026-09-19 12:52:34.6500 [14] DEBUG BasePage - Waiting for element to be visible: Email Field
+2026-09-19 12:52:34.6989 [14] INFO BasePage - Successfully entered text in: Email Field
+2026-09-19 12:52:34.6989 [14] INFO BasePage - Entering password
+2026-09-19 12:52:34.6989 [14] DEBUG BasePage - Attempting to input text in: Password Field
+2026-09-19 12:52:34.6989 [14] DEBUG BasePage - Waiting for element to be visible: Password Field
+2026-09-19 12:52:34.7291 [14] INFO BasePage - Successfully entered text in: Password Field
+2026-09-19 12:52:34.7293 [14] INFO BasePage - Entering confirm password
+2026-09-19 12:52:34.7293 [14] DEBUG BasePage - Attempting to input text in: Confirm Password Field
+2026-09-19 12:52:34.7293 [14] DEBUG BasePage - Waiting for element to be visible: Confirm Password Field
+2026-09-19 12:52:34.7600 [14] INFO BasePage - Successfully entered text in: Confirm Password Field
+2026-09-19 12:52:34.7600 [14] DEBUG BaseTest - Waiting for 2 seconds
+2026-09-19 12:52:36.7601 [14] INFO LoginRegisterTests - STEP 6 PASSED: Valid data entered successfully
+2026-09-19 12:52:36.7601 [14] INFO LoginRegisterTests - STEP 7: Verifying all errors are cleared
+2026-09-19 12:52:36.7601 [14] INFO BasePage - Retrieving error messages
+2026-09-19 12:53:16.7645 [14] INFO BasePage - Error message count: 0
+2026-09-19 12:53:16.7645 [14] INFO BasePage - All errors cleared: True (Error count: 0)
+2026-09-19 12:53:16.7645 [14] INFO LoginRegisterTests - STEP 7 PASSED: All validation errors cleared successfully
+2026-09-19 12:53:16.7645 [14] INFO LoginRegisterTests - TEST CASE LOG001 PASSED SUCCESSFULLY
+2026-09-19 12:53:17.3972 [14] INFO BrowserConfig - Browser closed successfully
+2026-09-19 12:53:17.3973 [14] INFO BaseTest - ========== Individual Test Completed ==========
