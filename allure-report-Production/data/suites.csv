@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
 "LOG001 - Mandatory field error messages display & clear
-","81210","TestMandatoryFieldValidation","AdvantageShopTestAutomation","2026-09-20","passed","2026-09-20","LoginRegisterTests","AdvantageShopTestAutomation.Tests","LoginRegisterTests","TestMandatoryFieldValidation"
+","114005","TestMandatoryFieldValidation","AdvantageShopTestAutomation","2026-09-21","passed","2026-09-21","LoginRegisterTests","AdvantageShopTestAutomation.Tests","LoginRegisterTests","TestMandatoryFieldValidation"
